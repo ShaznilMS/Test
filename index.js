@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 
-const PORT = 3030;
+const PORT = 3000;
 
 // Função para criar rotas
 
@@ -24,5 +24,5 @@ app.get("/criar/:nome/:profissao", function(req, res){
 // Função para criar servidor
 
 app.listen(PORT, () => {
-    console.log("Server listening to 'http://localhost:"+PORT+"'");
+    console.log("Server listening to http://localhost:"+PORT+"");
 });
