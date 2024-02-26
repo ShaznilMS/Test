@@ -2,24 +2,5 @@
   "dependencies": {
     "express": "^4.18.2",
     "nodemon": "^3.1.0"
-  },
-  "name": "test",
-  "version": "1.0.0",
-  "description": "Shaznil was here",
-  "main": "index.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    ""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ShaznilMS/Test.git"
-  },
-  "author": "Shaznil",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ShaznilMS/Test/issues"
-  },
-  "homepage": "https://github.com/ShaznilMS/Test#readme"
+  }
 }
