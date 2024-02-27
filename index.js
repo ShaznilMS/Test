@@ -1,19 +1,25 @@
 const express = require('express');
+const handlebars  = require('express-handlebars');
 const app = express();
+const Sequelize = require('sequelize');
 
+const PORT = 3000
 
-const PORT = 3000;
+// Config
+    // Templete Engine
+        app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
+        app.set('view engine', 'handlebars');
+    // Database Connection
+        const sequelize = new Sequelize('uniquedti', 'root', '123456', {
+            host: 'localhost',
+            dialect: 'mysql'
+        });
 
-// Função para criar rotas
+// Rotas
+app.get('/home', function (req, res) {
+    res.render("form");
+})
 
-app.get("/", function(req, res) {
-    res.sendFile(__dirname+'/views/home.html');
-});app.get("/login", function(req, res) {
-    res.sendFile(__dirname+'/views/login.html');
-});
-app.get("/register", function(req, res) {
-    res.sendFile(__dirname+'/views/register.html');
-});
 
 // Função para criar servidor
 
