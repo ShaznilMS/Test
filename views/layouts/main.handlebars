@@ -1,11 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            outline: none;
+            font-family: cursive;
+        }
+
+        html,
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fefefe;
+        }
+
+        .card {
+            width: 300px;
+            padding: 50px 20px;
+            display: flex;
+            gap: 20px;
+            border-radius: 15px;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0 0 10px #3336;
+        }
+
+        .card .input-field {
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+        }
+
+        .card .input-field span {
+            font-weight: 800;
+            letter-spacing: 2px;
+            pointer-events: none;
+        }
+
+        .card .input-field input {
+            border: 0;
+            outline: none;
+            border-bottom: 1px solid #333;
+            padding: 5px 0;
+        }
+
+        button {
+            height: 40px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+            margin: 20px 0 0;
+            color: #fff;
+            font-weight: 900;
+            letter-spacing: 2px;
+            transition: background .3s;
+            background-color: #0099ff;
+        }
+
+        button:hover {
+            background-color: #0085dd;
+        }
+    </style>
 </head>
+
 <body>
     {{{body}}}
 </body>
+
 </html>
