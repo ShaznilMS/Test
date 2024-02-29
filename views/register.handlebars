@@ -1,0 +1,29 @@
+<form action="/register" method="post" class="card">
+    <div class="input-field">
+        <span>
+            Username
+        </span>
+        <input type="text" name="user" placeholder="Type your username">
+    </div>
+    <div class="input-field">
+        <span>
+            Phone Number
+        </span>
+        <input type="text" name="phone" pattern="[0-9]{3}[0-9]{9}" placeholder="Ex: 258 8xxxxxxxx"
+            title="Enter you mobile phone with coutry code.">
+    </div>
+    <div class="input-field">
+        <span>
+            Password
+        </span>
+        <input type="text" name="pass" placeholder="Type your password">
+    </div>
+    {{!-- <div class="input-field">
+        <span>
+            Password
+        </span>
+        <input type="text" placeholder="Confirm your password">
+    </div> --}}
+    <button>Entrar</button>
+    <a href="/login">Fazer login</a>
+</form>
