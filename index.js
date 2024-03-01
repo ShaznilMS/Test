@@ -9,9 +9,9 @@ const PORT = 3000
 
 // Config
 // Templete Engine
-app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
-app.use(bodyParser.urlencoded({ extended: false }))
+app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' })); // definir o layout principal
+app.set('view engine', 'handlebars');   // definir motor de renderização
+app.use(bodyParser.urlencoded({ extended: false })) 
 app.use(bodyParser.json())
 
 // Rotas
