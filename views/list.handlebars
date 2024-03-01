@@ -1,3 +1,38 @@
-{{#each auth}}
+<style>
+    body {
+        flex-direction: column;
+    }
 
-{{/each}}
+    th,td {
+        padding: 4px 10px;
+    }
+</style>
+<body>
+    <header>
+        <h1>Lista de usuários</h1>
+    </header>
+
+
+    <main>
+
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Phone</th>
+                <th>Password</th>
+            </tr>
+            {{#each auth}}
+            
+            <tr>
+                <td>{{dataValues.username}}</td>
+                <td>{{dataValues.phone}}</td>
+                <td>{{dataValues.password}}</td>
+            </tr>
+
+            {{/each}}
+        </table>
+
+    </main>
+
+        
+</body>

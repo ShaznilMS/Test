@@ -3,6 +3,7 @@ const app = express()
 const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const Auth = require("./models/Auth")
+const { QueryTypes } = require('sequelize');
 
 const PORT = 3000
 
@@ -18,21 +19,26 @@ app.get("/", function (req, res) {
     res.render("home")
 })
 
-app.get("/list", function(req, res) {
-    Auth.all().then(function(auth) {
+app.get("/list", function (req, res) {
+    Auth.findAll({}).then(function(auth) {
         res.render("list", {auth: auth})
     })
 })
+
+
 
 app.get('/register', function (req, res) {
     res.render("register")
 })
 
 app.post('/register', function (req, res) {
-    Auth.create({
-        username: req.body.user,
-        phone: req.body.phone,
-        password: req.body.pass
+    Auth.findOrCreate({
+        where: { username: req.body.user },
+        defaults: {
+            username: req.body.user,
+            password: req.body.pass,
+            phone: req.body.phone
+        }
     }).then(function () {
         res.redirect("/")
     }).catch(function (erro) {
@@ -46,7 +52,13 @@ app.get('/login', function (req, res) {
 
 
 app.post('/login', function (req, res) {
-    res.send(req.body.user)
+    const fO = Auth.findOne({where: {username: req.body.user}}).then(function(result) {
+        if(result === null) {
+            res.redirect("/register")
+        } else {
+            res.send("Login executado com sucesso!")
+        }
+    })
 })
 
 
